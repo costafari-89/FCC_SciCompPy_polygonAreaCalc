@@ -27,6 +27,7 @@ class Rectangle:
         return diagonal
 
     def get_picture(self):
+        #Check that the dimensions of square or rectangle are not greater than 50
         if self.height > 50 or self.width > 50:
             return "Too big for picture."
         else:
@@ -39,6 +40,8 @@ class Rectangle:
         
 
     def get_amount_inside(self, shape_obj):
+        #To determine how many of the shape_obj for example a 2x2 square can fit inside the original object area
+        #for example an 8x4 rectangle I used floor division of area. 
         return (self.get_area() // shape_obj.get_area())
         
 
@@ -54,6 +57,8 @@ class Square(Rectangle):
         self.height = side
         self.width = side
 
+    #I override the set_width and set_height methods to make height and width the same given a value for width or height
+    #Maybe there's a better way to do this?
     def set_width(self, width):
         self.height = width
         self.width = width
